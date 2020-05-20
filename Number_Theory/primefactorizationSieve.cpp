@@ -10,7 +10,7 @@ void leastPrimeCalculate()
     memset(leastPrime,-1,sizeof(leastPrime));
     leastPrime[0]=0;
     leastPrime[1]=1;
-    for(i=2;i*i<=max;i++)
+    for(i=2;i<max;i++)
     {
        if(leastPrime[i]==-1)
        {
@@ -28,9 +28,15 @@ void leastPrimeCalculate()
 
 int main()
 {
+    ll n;
     leastPrimeCalculate();
-    for(ll i=1;i<=10;i++)
-     cout<<leastPrime[i]<<" ";
+    cout<<"Enter the number whose prime factors you have to calculate : ";
+    cin>>n;
+    while(n>1)
+    {
+        cout<<leastPrime[n]<<" ";
+        n = n/(leastPrime[n]);
+    }
     cout<<endl;
     return 0;
 }
