@@ -20,7 +20,7 @@ int main()
               ans.push_back(i);
 
             for(j=i*i;j<=n;j+=i)
-              v[j]=false;
+              v[j] = false;
         }
     }
 
